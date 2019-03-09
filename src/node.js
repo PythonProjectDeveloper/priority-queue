@@ -32,7 +32,8 @@ class Node {
 	}
 
 	remove() {
-
+		if (this.parent) 
+			this.parent.removeChild(this)
 	}
 
 	swapWithParent() {
