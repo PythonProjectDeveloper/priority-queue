@@ -60,7 +60,7 @@ class MaxHeap {
 	}
 
 	isEmpty() {
-		
+		return this.__size ? false : true
 	}
 
 	clear() {
