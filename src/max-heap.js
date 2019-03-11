@@ -4,6 +4,7 @@ class MaxHeap {
 	constructor() {
 		this.root = null
 		this.parentNodes = []
+		this.__size = 0
 	}
 
 	push(data, priority) {
@@ -11,10 +12,12 @@ class MaxHeap {
 
 		this.insertNode(node)
 		this.shiftNodeUp(node)
+
+		this.__size += 1
 	}
 
 	pop() {
-		
+		this.__size -= 1
 	}
 
 	detachRoot() {
@@ -53,7 +56,7 @@ class MaxHeap {
 	}
 
 	size() {
-		
+		return this.__size
 	}
 
 	isEmpty() {
@@ -63,6 +66,7 @@ class MaxHeap {
 	clear() {
 		this.root = null
 		this.parentNodes = []
+		this.__size = 0
 	}
 
 	insertNode(node) {
