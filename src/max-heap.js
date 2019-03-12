@@ -122,19 +122,8 @@ class MaxHeap {
 		
 		if (swapNode == node) return
 
-		let currentNodeIndex = this.parentNodes.indexOf(node)
-		let childNodeIndex = this.parentNodes.indexOf(swapNode)
-
-		if (currentNodeIndex !== -1)
-			this.parentNodes[currentNodeIndex] = swapNode
-
-		if (childNodeIndex !== -1)
-			this.parentNodes[childNodeIndex] = node
-
-		swapNode.swapWithParent()
+		this.shiftNodeUp(swapNode)
 		this.shiftNodeDown(node)
-		
-		if (!swapNode.parent) this.root = swapNode
 	}
 }
 
