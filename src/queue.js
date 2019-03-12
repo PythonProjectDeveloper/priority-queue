@@ -7,7 +7,10 @@ class PriorityQueue {
 	}
 
 	push(data, priority) {
+		if (this.heap.size() === this.maxSize) 
+			throw new Error('PriorityQueue has the maximum number of elements')
 
+		this.heap.push(data, priority)
 	}
 
 	shift() {
